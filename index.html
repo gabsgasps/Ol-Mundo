@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<title>Visual Web</title>
+		<link rel="stylesheet" href="estilo.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript">// <![CDATA[
+$(document).ready(function() {
+function filterPath(string) {
+return string
+.replace(/^\//,'')
+.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+.replace(/\/$/,'');
+}
+$('a[href*=#]').each(function() {
+if ( filterPath(location.pathname) == filterPath(this.pathname)
+&& location.hostname == this.hostname
+&& this.hash.replace(/#/,'') ) {
+var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+if ($target) {
+var targetOffset = $target.offset().top;
+$(this).click(function() {
+$('html, body').animate({scrollTop: targetOffset}, 300);
+return false;
+});
+}
+}
+});
+});
+// ]]></script>
+	</head>
+
+	<body>
+		<main>
+			<header id="topo">
+			<!-- header -->
+				<h1>Gasparino</h1>
+				<h2>Desenvolvedor Web</h2>
+			</header>
+			<!-- menu de navegação -->
+			<nav>
+				<ul>
+					<li><a href="#topo">início</a></li>
+					<li><a href="#trabalhos">trabalhos</a></li>
+					<li><a href="#clientes">clientes</a></li>
+					<li><a href="#contato">contato</a></li>
+				</ul>
+
+			</nav>
+			<div>
+				<img src="imagens/destaque-topo.jpg" alt="imagem de um notebook">
+			</div>
+				<!-- seção de meus trabalhos -->
+			<section id="trabalhos">
+				<h1 class="titulo-secao">Trabalhos</h1>
+				<article class="materia-trabalho">
+					
+						
+					<p><img class="esquerda" src="imagens/trabalho1.jpg" alt="homem sorridente digitando em um notebook">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+				</article>
+
+				<article class="materia-trabalho">
+				
+					<p><img class="direita" src="imagens/trabalho2.jpg" alt="computador, notebook, tablet e smartphone">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus quod sequi quae, inventore amet alias debitis nihil architecto error repellendus facilis nisi dignissimos officiis quisquam molestias tempore accusamus ipsa!</p>
+					
+					
+				</article>
+			</section>
+			<!-- seção de comentarios -->
+			<section id="clientes">
+				<h1 class="titulo-secao">Meus clientes</h1>
+				<img src="imagens/clientes.jpg" alt="logo dos clientes">
+			</section>
+			<!-- seção de cometarios -->
+			<section id="contatos">
+			
+					<h1 class="titulo-secao">Contato</h1>
+					<p>gasparinogabriel2@gmail.com
+					<br>
+					11 9 9999 9999
+					<br>
+					@Gabriel</p>
+					
+			</section>
+				<form action="" method="post">
+				
+					<p><label for="nome">Nome</label><br>
+						<input type="text" name="nome" id="nome" autofocus>
+					</p>
+					<p>
+						<label for="email">E-mail</label><br>
+						<input type="email" id="email" name="email">
+					</p>
+					<p>	
+						<input class="botao" type="submit" value="enviar">
+					</p>
+					
+				</form>
+				
+		
+			
+			
+		</main>
+		<footer>
+			<h4>Direitos reservados - 2017</h4>
+			</footer>
+	</body>
+</html>
